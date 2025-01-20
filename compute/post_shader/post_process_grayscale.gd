@@ -43,7 +43,7 @@ func _render_callback(p_effect_callback_type: EffectCallbackType, p_render_data:
 	if rd and p_effect_callback_type == EFFECT_CALLBACK_TYPE_POST_TRANSPARENT and pipeline.is_valid():
 		# Get our render scene buffers object, this gives us access to our render buffers.
 		# Note that implementation differs per renderer hence the need for the cast.
-		var render_scene_buffers := p_render_data.get_render_scene_buffers()
+		var render_scene_buffers : RenderSceneBuffersRD = p_render_data.get_render_scene_buffers()
 		if render_scene_buffers:
 			# Get our render size, this is the 3D render resolution!
 			var size: Vector2i = render_scene_buffers.get_internal_size()
